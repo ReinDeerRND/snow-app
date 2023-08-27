@@ -7,10 +7,7 @@
 }
 mat-form-field{
     margin-right: 10px;
-
-    &:last-child{
-        width: 330px;
-    }
+    width: 100%;
 }
 
 @media screen and (max-width: 500px) {
