@@ -1,0 +1,25 @@
+.info-wrapper {
+    width: 100%;
+    .header {
+        color: #005c9e;
+        background-color: #DFF6FD;
+        padding: 20px 24px;
+        font-weight: 450;
+    }
+    .content {
+        padding: 0 24px;
+        max-height: 70vh;
+        overflow-y: auto;
+        .warning{
+            color: red;
+            font-weight: 450;
+        }
+    }
+}
+button {
+    margin: 20px 24px;
+    
+}
+::ng-deep .mat-dialog-container {
+    padding: 0;
+}

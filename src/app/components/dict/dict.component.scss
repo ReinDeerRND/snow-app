@@ -1,0 +1,86 @@
+.dict-container {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+mat-card {
+    width: 22%;
+    margin: 5px 6px;
+}
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.amount-box {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 5px;
+    color: #005c9e;
+    font-style: italic;
+}
+mat-form-field {
+    position: relative;
+    width: 40%;
+    margin-left: 5px;
+}
+.header-buttons {
+    margin-right: 5px;
+}
+button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.float-buttons {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    display: none;
+    mat-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        margin-right: 6px;
+        cursor: pointer;
+    }
+}
+mat-card:hover {
+    background-color: aliceblue;
+    .float-buttons {
+        display: block;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .search-container {
+        mat-form-field {
+            width: 100%;
+        }
+        .header-buttons {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .amount-box {
+            margin-top: 10px;
+        }
+    }
+}
+@media screen and (max-width: 426px) {
+    .dict-container .mat-card {
+        width: 90%;
+    }
+    
+}
+@media screen and (max-width: 376px) {
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

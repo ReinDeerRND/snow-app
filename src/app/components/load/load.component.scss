@@ -1,0 +1,106 @@
+.download-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 20px;
+    .load-layout {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        form {
+            padding: 5px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        mat-form-field,
+        button {
+            margin: 20px 0 10px;
+        }
+        mat-form-field {
+            width: 100%;
+        }
+    }
+}
+.result-layout {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .result {
+        margin-top: 20px;
+        border: 2px solid lightgray;
+        padding: 10px;
+        .red {
+            color: red;
+        }
+        .word {
+            cursor: pointer;
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+    .new-words-layout {
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        span {
+            padding: 5px 0;
+        }
+        .new-words {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .translate-item {
+                width: 47%;
+            }
+        }
+        .new-word {
+            font-weight: bold;
+        }
+    }
+}
+.middle-flex {
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 768px) {
+    .download-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        .load-layout {
+            mat-form-field,
+            button {
+                margin: 5px 0;
+            }
+        }
+        .result-layout {
+            .result {
+                margin-top: 5px;
+            }
+            .new-words-layout {
+                padding: 5px 0;
+            }
+        }
+    }
+}
+@media screen and (max-width: 426px) {
+    .result-layout .new-words-layout .new-words {
+        align-items: center;
+        .translate-item {
+            width: 90%;
+            mat-form-field {
+                width: 100%;
+            }
+        }
+    }
+}

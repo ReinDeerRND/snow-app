@@ -1,0 +1,47 @@
+<div class="download-layout">
+  <div class="load-layout">
+    <div class="header2">Загрузка статьи для перевода</div>
+    <form [formGroup]="loadForm" (onSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" color="accent">
+        <mat-label>Название статьи</mat-label>
+        <input matInput formControlName="textTitle">
+      </mat-form-field>
+      <mat-form-field appearance="fill" color="accent">
+        <mat-label>Текст статьи для перевода</mat-label>
+        <textarea matInput rows="10" formControlName="textContent"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="loadForm.invalid" (click)="onSubmit()">Загрузить
+        статью</button>
+      <button mat-raised-button color="primary" type="reset" (click)="reset()">Очистить форму</button>
+    </form>
+  </div>
+  <div class="result-layout">
+    <div class="header2">Загружаемый текст</div>
+    <div class="result" *ngIf="newText">
+      <span *ngFor="let item of markedText" [class.red]="!item.tooltip" [matTooltip]="item.tooltip" class="word">{{item.word +' '}}</span>
+    </div>
+    <div class="new-words-layout">
+      <div class="header2" *ngIf="wordsArray && wordsArray.length > 0">Переведите слова из текста</div>
+
+      <div [formGroup]="newWordsForm">
+        <div formArrayName="newWordsArray" class="new-words">
+          <ng-container *ngIf="wordsArray && newWordsArray['controls'].length > 0">
+            <div *ngFor="let form of newWordsArray['controls']; let i =index;" class="translate-item">
+              <div [formGroupName]="i">
+                <mat-form-field appearance="outline" color="accent">
+                  <mat-label>Перевод слова <span class="new-word">{{wordsArray[i]}}</span></mat-label>
+                  <input matInput formControlName="translate">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="middle-flex" style="width:100%;"><button mat-raised-button color="primary" type="submit" (click)="saveToDictionary()">Сохранить в словарь</button></div>
+
+          </ng-container>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
