@@ -1,0 +1,15 @@
+<div mat-dialog-content>
+  <div class="modal-header">Загрузка словаря из файла</div>
+  <mat-form-field style="width: 100%;">
+    <mat-label>Файл</mat-label>
+    <button mat-icon-button matPrefix (click)="file_input.click()">
+      <mat-icon>attach_file</mat-icon>
+    </button>
+    <input type="text" readonly matInput [formControl]="fileFormControl" />
+    <input type="file" hidden #file_input (change)="onFileChange(file_input.files)" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="accent" (click)="close()">Отмена</button>
+  <button mat-raised-button color="primary" (click)="loadFile()" cdkFocusInitial>Загрузить</button>
+</div>

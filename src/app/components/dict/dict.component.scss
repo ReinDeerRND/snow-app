@@ -6,11 +6,12 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+    mat-card {
+        width: 22%;
+        margin: 5px 6px;
+    }
 }
-mat-card {
-    width: 22%;
-    margin: 5px 6px;
-}
+
 .search-container {
     width: 100%;
     display: flex;
@@ -71,12 +72,14 @@ mat-card:hover {
             margin-top: 10px;
         }
     }
+    .dict-container mat-card {
+        width: 45%;
+    }
 }
 @media screen and (max-width: 426px) {
-    .dict-container .mat-card {
+    .dict-container mat-card {
         width: 90%;
     }
-    
 }
 @media screen and (max-width: 376px) {
     button {

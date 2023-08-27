@@ -15,10 +15,10 @@ export class LoadDictService {
   changeDictionary: Subject<any> = new Subject<any>();
 
   constructor(private http: HttpClient) {
-    let sub = this.loadDictionaryFromDB().subscribe(dict => {
-      dict.forEach(item => SessionDictionary.push(item));
-      sub.unsubscribe();
-    });
+    // let sub = this.loadDictionaryFromDB().subscribe(dict => {
+    //   dict.forEach(item => SessionDictionary.push(item));
+    //   sub.unsubscribe();
+    // });
   }
 
   isWordExist(key: string): boolean{
@@ -26,7 +26,7 @@ export class LoadDictService {
   }
   
   addWordToDictionary(word: IWord) {
-    if (!this.isWordExist(word.key)) { 
+    if (!this.isWordExist(word.key) ) { 
       SessionDictionary.push(word); 
       this.changeDictionary.next(true);
     }
@@ -52,7 +52,9 @@ export class LoadDictService {
   addWordsToDictionary(array: IWord[]) {
     if (array && array.length > 0) {
       array.forEach(item => {
-        this.addWordToDictionary(item);
+        if(item.key) {
+          this.addWordToDictionary(item);
+        }
       });
     }
   }
@@ -67,9 +69,9 @@ export class LoadDictService {
     })
   }
 
-  loadDictionaryFromDB() { //remote dict in DB
-    return this.http.get<IWord[]>(this.dbUrl);
-  }
+  // loadDictionaryFromDB() { //remote dict in DB
+  //   return this.http.get<IWord[]>(this.dbUrl);
+  // }
 
   loadTexts() {
     return BaseTexts;

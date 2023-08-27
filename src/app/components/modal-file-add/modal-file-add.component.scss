@@ -1,0 +1,28 @@
+.modal-header{
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #888888;
+}
+mat-form-field{
+    margin-right: 10px;
+
+    &:last-child{
+        width: 330px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    mat-form-field{
+        margin-right: 0;
+        &:first-of-type{
+            width: 90%;
+        }
+        &:last-child{
+            width: 90%;
+        }
+    }
+
+    
+}

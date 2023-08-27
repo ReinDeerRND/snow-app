@@ -19,7 +19,6 @@ import { FormsModule } from '@angular/forms';
 import { TextsComponent } from './components/texts/texts.component';
 import { LoadComponent } from './components/load/load.component';
 import { DictComponent } from './components/dict/dict.component';
-// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { DbService } from './services/db.service';
 import { CommonModule } from '@angular/common';
 import { SearchWordPipe } from './search-word.pipe';
@@ -27,7 +26,7 @@ import { ModalNewWordComponent } from './components/modal-new-word/modal-new-wor
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ModalEditWordComponent } from './components/modal-edit-word/modal-edit-word.component';
 import { ModalInfoComponent } from './components/modal-info/modal-info.component';
-
+import { ModalFileAddComponent } from './components/modal-file-add/modal-file-add.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,8 @@ import { ModalInfoComponent } from './components/modal-info/modal-info.component
     SearchWordPipe,
     ModalNewWordComponent,
     ModalEditWordComponent,
-    ModalInfoComponent
+    ModalInfoComponent,
+    ModalFileAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +61,6 @@ import { ModalInfoComponent } from './components/modal-info/modal-info.component
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}

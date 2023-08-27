@@ -7,6 +7,7 @@ import { IWord } from 'src/app/model/model';
 import { LoadDictService } from 'src/app/services/load-dict.service';
 import { ModalEditWordComponent } from '../modal-edit-word/modal-edit-word.component';
 import { ModalNewWordComponent } from '../modal-new-word/modal-new-word.component';
+import { ModalFileAddComponent } from '../modal-file-add/modal-file-add.component';
 
 @Component({
   selector: 'app-dict',
@@ -73,8 +74,18 @@ export class DictComponent implements OnInit {
     this.service.loadBaseDictionary();
   }
 
-  saveDictToDB() {
-    this.snackBar.open(`Данная опция находится в разработке`, "Закрыть");
+  loadUserDictionary() {
+    const dialogRef = this.dialog.open(ModalFileAddComponent, {
+      width: '600px',
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // this.service.addWordToDictionary(result);
+      }
+    });
+    //this.snackBar.open(`Данная опция находится в разработке`, "Закрыть");
   }
 
   saveDictToFile() {
