@@ -1,0 +1,26 @@
+.card-container {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    .card-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .word-card {
+            height: 300px;
+            min-width: 300px;
+            width: 50%;
+            margin: 10px 0;
+            font-size: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            text-align: center;
+        }
+    }
+}

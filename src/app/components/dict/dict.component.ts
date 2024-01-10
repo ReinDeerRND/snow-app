@@ -8,6 +8,7 @@ import { LoadDictService } from 'src/app/services/load-dict.service';
 import { ModalEditWordComponent } from '../modal-edit-word/modal-edit-word.component';
 import { ModalNewWordComponent } from '../modal-new-word/modal-new-word.component';
 import { ModalFileAddComponent } from '../modal-file-add/modal-file-add.component';
+import { sortWords } from 'src/app/utils/utils-fn';
 
 @Component({
   selector: 'app-dict',
@@ -22,7 +23,7 @@ export class DictComponent implements OnInit {
   }
 
   constructor(private service: LoadDictService, public dialog: MatDialog, private snackBar: MatSnackBar) {
-    this.words = this.service.getSessionDictionary().sort((a: IWord, b: IWord) => a.key > b.key ? 1 : -1);
+    this.words = this.service.getSessionDictionary().sort(sortWords);
     this.searchForm = new FormGroup({
       search: new FormControl(),
     })

@@ -27,6 +27,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ModalEditWordComponent } from './components/modal-edit-word/modal-edit-word.component';
 import { ModalInfoComponent } from './components/modal-info/modal-info.component';
 import { ModalFileAddComponent } from './components/modal-file-add/modal-file-add.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ModalFileAddComponent } from './components/modal-file-add/modal-file-ad
     ModalEditWordComponent,
     ModalInfoComponent,
     ModalFileAddComponent,
+    CardsComponent,
   ],
   imports: [
     BrowserModule,

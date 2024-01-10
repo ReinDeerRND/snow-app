@@ -13,7 +13,7 @@
   <div class="center-icon"><mat-icon color="accent">expand_more</mat-icon></div>
 <mat-card >
   <mat-tab-group animationDuration="0ms" color="accent" mat-stretch-tabs="false" mat-align-tabs="start">
-    <!-- <mat-tab >
+    <mat-tab >
       <ng-template mat-tab-label>
         <mat-icon class="tab-icon" color="accent">download</mat-icon>
         Загрузка текста
@@ -21,7 +21,7 @@
       <ng-template matTabContent>
         <app-load></app-load>
       </ng-template>
-    </mat-tab> -->
+    </mat-tab>
     <mat-tab label="Dictionary">
       <ng-template mat-tab-label>
         <mat-icon class="tab-icon" color="accent">translate</mat-icon>
@@ -38,6 +38,15 @@
       </ng-template>
       <ng-template matTabContent>
         <app-texts></app-texts>
+      </ng-template>
+    </mat-tab>
+    <mat-tab >
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon" color="accent">photo_library</mat-icon>
+        Карточки
+      </ng-template>
+      <ng-template matTabContent>
+        <app-cards></app-cards>
       </ng-template>
     </mat-tab>
   </mat-tab-group>
