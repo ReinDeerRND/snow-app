@@ -1,7 +1,6 @@
 import { IWord } from "../model/model";
 
 export const BaseDictionary = [
-    { key: "I", translate: "я" },
     { key: "a", translate: "неопределенный артикль" },
     { key: "about", translate: "вокруг, около, о" },
     { key: "all", translate: "все, всё, вся, весь" },
@@ -33,6 +32,7 @@ export const BaseDictionary = [
     { key: "have", translate: "иметь" },
     { key: "he", translate: "он" },
     { key: "how", translate: "как" },
+    { key: "I", translate: "я" },
     { key: "if", translate: "если" },
     { key: "in", translate: "в, в течение, через, на" },
     { key: "into", translate: "в, внутрь" },
