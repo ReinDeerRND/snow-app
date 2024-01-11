@@ -1,9 +1,16 @@
 <div class="card-container">
+    <div class="regime-box">
+        <mat-button-toggle-group [formControl]="regimeControl" color="accent">
+            <mat-button-toggle value="Foreign"> EN </mat-button-toggle>
+            <mat-button-toggle value="Translate">РУС</mat-button-toggle>
+            <mat-button-toggle value="Both">EN - РУС</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
     <div *ngIf="!isDictionaryFinished; else repeat" class="card-wrapper">
         <mat-card *ngIf="currentCard" class="word-card">
             <div class="question-word"> {{currentCard.key}}</div>
             <div *ngIf="!isWordChecked" class="gray-box" (click)="check()"></div>
-            <div *ngIf="isWordChecked" class="answer-word">{{currentCard.translate}}</div>
+            <div *ngIf="isWordChecked" class="answer-word" (click)="nextCard()">{{currentCard.translate}}</div>
         </mat-card>
         <div class="button-block">
             <button mat-raised-button color="primary" (click)="nextCard()">Далее</button>

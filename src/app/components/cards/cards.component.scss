@@ -1,18 +1,20 @@
 .card-container {
     width: 100%;
     height: 70vh;
-    min-height: 300px;
+    min-height: 340px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px 0;
     .card-wrapper {
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         .word-card {
-            height: 300px;
+            height: 330px;
             min-width: 300px;
             width: 50%;
             margin: 10px 0;
@@ -30,7 +32,7 @@
                     0px 0px 12px 3px rgb(225 245 253);
             }
             .info-box {
-                color: #005C9E;
+                color: #005c9e;
                 font-size: 25px;
             }
         }
@@ -53,12 +55,18 @@
         .answer-word {
             height: 40%;
         }
-
+        .answer-word {
+            cursor: pointer;
+        }
         .button-block {
             padding-top: 10px;
             width: 100%;
             display: flex;
             justify-content: center;
         }
+    }
+    .regime-box {
+        flex-grow: 0;
+        padding: 0;
     }
 }

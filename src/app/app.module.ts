@@ -28,6 +28,7 @@ import { ModalEditWordComponent } from './components/modal-edit-word/modal-edit-
 import { ModalInfoComponent } from './components/modal-info/modal-info.component';
 import { ModalFileAddComponent } from './components/modal-file-add/modal-file-add.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { CardsComponent } from './components/cards/cards.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
