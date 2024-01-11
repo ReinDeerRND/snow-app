@@ -1,16 +1,28 @@
-<div *ngIf= "!isDictionaryFinished; else repeat" class="card-container">
-    <div class="card-wrapper">
+<div class="card-container">
+    <div *ngIf="!isDictionaryFinished; else repeat" class="card-wrapper">
         <mat-card *ngIf="currentCard" class="word-card">
             <div class="question-word"> {{currentCard.key}}</div>
-            <div class="answer-word">{{currentCard.translate}}</div>
+            <div *ngIf="!isWordChecked" class="gray-box" (click)="check()"></div>
+            <div *ngIf="isWordChecked" class="answer-word">{{currentCard.translate}}</div>
         </mat-card>
         <div class="button-block">
-            <button mat-button color="accent">Отмена</button>
             <button mat-raised-button color="primary" (click)="nextCard()">Далее</button>
         </div>
     </div>
+    <ng-template #repeat>
+        <div class="card-wrapper">
+            <mat-card class="word-card ">
+                <button mat-icon-button color="accent" class="example-icon">
+                    <mat-icon>done</mat-icon>
+                </button>
+                <div class="info-box">
+                    Все слова пройдены, повторить обучение?
+                </div>
+                <div class="button-block">
+                    <button mat-raised-button color="primary" (click)="reload()">Да, повторить</button>
+                </div>
+            </mat-card>
+
+        </div>
+    </ng-template>
 </div>
-<ng-template #repeat>
- Все слова пройдены, повторить обучение?
- <button mat-raised-button color="primary" (click)="reload()">Повторить обучение</button>
-</ng-template>

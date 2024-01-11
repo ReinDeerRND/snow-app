@@ -17,6 +17,7 @@ export class CardsComponent implements OnInit {
   iterator = 0;
   currentCard: IWord | null = null;
   isDictionaryFinished = false;
+  isWordChecked = false;
 
   constructor(private service: LoadDictService) {}
 
@@ -24,6 +25,10 @@ export class CardsComponent implements OnInit {
     this.dictionary = this.service.getSessionDictionary();
     this.pageAmount = Math.ceil(this.dictionary.length / this.pageSize);
     this.getNextPage();
+  }
+
+  check(){
+    this.isWordChecked = true;
   }
 
   getNextPage() {
@@ -46,6 +51,7 @@ export class CardsComponent implements OnInit {
       this.iterator = 0;
       this.getNextPage();
     } else {
+      this.isWordChecked = false;
       this.currentCard = this.words[this.iterator];
       this.iterator++;
     }
