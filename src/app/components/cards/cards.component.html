@@ -18,7 +18,7 @@
     </div>
     <ng-template #repeat>
         <div class="card-wrapper">
-            <mat-card class="word-card ">
+            <mat-card *ngIf="dictionary.length" class="word-card">
                 <button mat-icon-button color="accent" class="example-icon">
                     <mat-icon>done</mat-icon>
                 </button>
@@ -29,7 +29,14 @@
                     <button mat-raised-button color="primary" (click)="reload()">Да, повторить</button>
                 </div>
             </mat-card>
-
+            <mat-card *ngIf="!dictionary.length" class="word-card">
+                <div class="info-box">
+                    Нет слов <br> для обучения
+                </div>
+                <div class="button-block">
+                    <button mat-raised-button color="primary" (click)="goToDictionary()">Перейти в словарь</button>
+                </div>
+            </mat-card>
         </div>
     </ng-template>
 </div>

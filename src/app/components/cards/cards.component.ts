@@ -96,4 +96,6 @@ export class CardsComponent implements OnInit {
     this.getNextPage();
     this.isDictionaryFinished = false;
   }
+
+  goToDictionary() {}
 }

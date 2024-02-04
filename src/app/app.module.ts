@@ -18,6 +18,7 @@ import { ModalInfoComponent } from './components/modal-info/modal-info.component
 import { ModalFileAddComponent } from './components/modal-file-add/modal-file-add.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { MaterialModule } from './material.module';
+import { WrapperComponent } from './components/wrapper/wrapper.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MaterialModule } from './material.module';
     ModalInfoComponent,
     ModalFileAddComponent,
     CardsComponent,
+    WrapperComponent,
   ],
   imports: [
     BrowserModule,
