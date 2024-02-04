@@ -4,6 +4,7 @@ import * as _ from 'lodash';
 import { Subscription } from 'rxjs';
 import { CardRegime, IWord } from 'src/app/model/model';
 import { LoadDictService } from 'src/app/services/load-dict.service';
+import { TabService } from 'src/app/services/tab.service';
 
 @Component({
   selector: 'app-cards',
@@ -24,7 +25,7 @@ export class CardsComponent implements OnInit {
   regimeSub: Subscription | undefined;
   regime: CardRegime = CardRegime.Foreign;
 
-  constructor(private service: LoadDictService) {}
+  constructor(private service: LoadDictService, private tabs: TabService) {}
 
   ngOnInit(): void {
     this.dictionary = this.service.getSessionDictionary();
@@ -97,5 +98,7 @@ export class CardsComponent implements OnInit {
     this.isDictionaryFinished = false;
   }
 
-  goToDictionary() {}
+  goToDictionary() {
+    this.tabs.changeIndex(1);
+  }
 }
