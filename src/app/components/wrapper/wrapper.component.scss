@@ -1,0 +1,9 @@
+.tab-title{
+    margin-left: 2px;
+}
+
+@media screen and (max-width: 426px) {
+    .tab-title {
+        display: none;
+    }
+}

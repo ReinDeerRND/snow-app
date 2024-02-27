@@ -1,3 +1,6 @@
+:host{
+    width: 100vw
+}
 mat-card {
     margin: 10px 5px;
     mat-tab {
@@ -40,4 +43,9 @@ img.header-logo{
     display: flex;
     justify-content: center;
     margin: 10px 0;
+}
+@media screen and (max-width: 426px) {
+    .center-icon  {
+        display: none;
+    }
 }
